@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     end 
 
     def has_authority 
-        unless current_user.id == @post.id || current_user.admin? 
+        unless current_user.id == @post.user_id || current_user.admin? 
             render json: {error: "Unauthorised"}, status: 401
         end 
     end 
