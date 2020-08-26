@@ -8,3 +8,9 @@
 
 User.create(username: "AlexTest", email: "alex@test.com", password: "password1", password_confirmation: "password1")
 User.create(username: "BigBoss", email: "admin@test.com", password: "password1", password_confirmation: "password1", role: 1)
+categories = ["cooking", "code", "music", "politics"]
+categories.each do |cat| 
+    Category.create(name: cat)
+    puts "created #{cat} category"
+end
+Post.create(user_id: 1, category_id: 1, title: "I love cooking!", content: "I Sure do love cooking. I could cook food all day long") 
